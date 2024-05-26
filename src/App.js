@@ -7,22 +7,18 @@ import Dashboard from "./Views/Dashboard";
 import { useState } from "react";
 
 function App() {
-  const [isLoggedin, setIsLoggedIn] = useState(
-    localStorage.getItem("isLoggedIn")
-  );
+  const [isLoggedin, setIsLoggedIn] = useState(localStorage.getItem("user"));
 
   return (
     <div>
       <Routes>
         {isLoggedin ? (
-          <Route path="/">
-            <Route index element={<Dashboard />} />
-          </Route>
+          <Route path="/" element={<Dashboard />} />
         ) : (
-          <Route path="/">
+          <>
             <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<Register />} />
-          </Route>
+          </>
         )}
       </Routes>
     </div>

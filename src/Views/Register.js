@@ -74,7 +74,7 @@ const Register = () => {
           Create new account
         </Button>
 
-        <Link to={{ pathname: "/login" }}>
+        <Link to={{ pathname: "/" }}>
           <p style={{ margin: "12px 0 0 0", textAlign: "right" }}>
             Back to Login
           </p>

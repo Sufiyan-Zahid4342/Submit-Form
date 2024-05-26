@@ -1,11 +1,14 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import { useAPI, APIS } from "../apis/config";
 
 const Login = (props) => {
   const { setIsLoggedIn } = props;
 
   const [login, setLogin] = useState({ email: "", password: "" });
+
+  const [login_api, loading] = useAPI(APIS.login);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -13,10 +16,18 @@ const Login = (props) => {
     setLogin({ ...login, [name]: value });
   }
 
-  function handleSubmit() {
-    console.log(login);
-    setIsLoggedIn(true);
-    localStorage.setItem("isLoggedIn", true);
+  async function handleSubmit() {
+    try {
+      const { data } = await login_api({
+        username: login.email,
+        password: login.password,
+      });
+
+      setIsLoggedIn(true);
+      localStorage.setItem("user", JSON.stringify(data));
+    } catch (err) {
+      console.log("Error in login page", err);
+    }
   }
 
   return (
@@ -64,7 +75,7 @@ const Login = (props) => {
           style={{ margin: "24px auto 0 auto", width: 100, display: "block" }}
           onClick={handleSubmit}
         >
-          Login
+          {loading ? "Loading..." : "Login"}
         </Button>
 
         <Link to={{ pathname: "/register" }}>
