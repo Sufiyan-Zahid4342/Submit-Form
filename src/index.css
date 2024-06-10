@@ -1,30 +1,82 @@
+/* Filename - App.css */
+/* It containds the Form and Page Styling*/
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.text-center {
+  background: #f3f3f3;
   text-align: center;
 }
-
-.form-label {
-  display: block;
-  margin-bottom: 4px;
-  font-weight: 500;
+.App {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  transition: transform 0.2s;
+  width: 500px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
 }
 
-.form-input {
-  padding: 8px 12px;
-  outline: none;
-  border: 1px solid #b0b0b0;
-  width: -webkit-fill-available;
+h1 {
+  font-size: x-large;
+  text-align: center;
+  color: #327c35;
+}
+
+fieldset {
+  border: none;
+}
+
+input {
+  display: block;
+  width: 100%;
+  /* margin-bottom: 15px; */
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 12px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline;
+  width: 10%;
+}
+select {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+label {
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #555;
+  font-weight: bold;
+}
+
+button {
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #4caf50;
+  width: 40%;
+  font-size: 16px;
+}
+textarea {
+  resize: none;
+  width: 98%;
+  min-height: 100px;
+  max-height: 150px;
 }
